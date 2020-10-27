@@ -1,5 +1,10 @@
+### app ico
+https://icon-icons.com/zh/
+
 ### 下载安装rsrc
-`go get github.com/akavel/rsrc`
+```
+go get github.com/akavel/rsrc
+```
 
 ### 生成程序描述文件ico.manifest
 ```
