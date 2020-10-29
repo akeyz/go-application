@@ -42,3 +42,6 @@ rsrc.exe -manifest ico.manifest -o myapp.syso -ico myapp.ico
 将myapp.syso文件放到相应go程序下，然后直接运行go build .即可。
 
 golang已经可以自动寻找子目录下的 syso 文件。
+
+### gcc安装64bit报错
+https://blog.csdn.net/mecho/article/details/24305369

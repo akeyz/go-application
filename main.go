@@ -1,10 +1,13 @@
 package main
 
 import (
+	"database/sql"
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 
+	_ "github.com/mattn/go-sqlite3"
 	"github.com/zserge/lorca"
 )
 
@@ -27,6 +30,24 @@ func httpServe() {
 }
 
 func main() {
+	os.Remove("./screen.db")
+
+	db, err := sql.Open("sqlite3", "./screen.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	sqlStmt := `
+		create table foo (id integer not null primary key, name text);
+		delete from foo;
+	`
+	_, err = db.Exec(sqlStmt)
+	if err != nil {
+		log.Printf("%q: %s\n", err, sqlStmt)
+		return
+	}
+
 	go httpServe()
 
 	ui, err := lorca.New("", "", 480, 320)
