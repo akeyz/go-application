@@ -1,3 +1,7 @@
+# 打包基于chrome的全屏应用
+
+### chrome必须已经安装
+
 ### app ico
 https://icon-icons.com/zh/
 
