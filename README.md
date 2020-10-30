@@ -45,3 +45,7 @@ golang已经可以自动寻找子目录下的 syso 文件。
 
 ### gcc安装64bit报错
 https://blog.csdn.net/mecho/article/details/24305369
+
+
+### 如何编译
+go build -ldflags="-H windowsgui"
